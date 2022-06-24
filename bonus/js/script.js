@@ -3,7 +3,9 @@
 // e per i multipli di 5 stampi “Buzz”.
 // Per i numeri che sono sia multipli di 3 che di 5 stampi “FizzBuzz”.  
 
+const numberList = document.getElementById("lista");
 
+let elements = '';
 
 // Ciclo for
 
@@ -13,17 +15,14 @@ for (let i = 1; i <= 100; i++) {
 
   if ((i % 5 == 0)&&(i % 3 == 0)) {
 
-    console.log("fizzbuzz");
-    document.getElementById("lista").innerHTML += "fizzbuzz" + ' ';
-
+    elements += '<li class="fizzbuzz">fizzbuzz</li>';
   }
 
   // se il numero è multiplo di 3
 
   else if (i % 3 == 0) {
 
-    console.log("fizz");
-    document.getElementById("lista").innerHTML += "fizz" + ' ';
+    elements += '<li class="buzz">buzz</li>';
 
   }
 
@@ -31,8 +30,7 @@ for (let i = 1; i <= 100; i++) {
 
   else if (i % 5 == 0) {
 
-    console.log("buzz");
-    document.getElementById("lista").innerHTML += "buzz" + ' ';
+    elements += '<li class="fizz">fizz</li>';
 
   }
 
@@ -40,9 +38,10 @@ for (let i = 1; i <= 100; i++) {
 
   else {
 
-    console.log(i);
-    document.getElementById("lista").innerHTML += i + ' ';
+    elements += `<li>${i}</li>`;
 
   }
 
 }
+
+numberList.innerHTML = elements;
